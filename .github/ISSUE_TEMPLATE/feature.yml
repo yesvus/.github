@@ -1,0 +1,22 @@
+name: Feature request
+description: Propose a useful capability or improvement
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and motivation
+      description: Who needs this and why?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope, alternatives and acceptance criteria
+      description: Optional for an early proposal.
