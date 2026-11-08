@@ -1,0 +1,16 @@
+name: Idea or research
+description: Capture a hypothesis or question without a full specification
+title: "[Idea] "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea or question
+      description: A short note is enough.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context or evidence
+      description: Optional links, tradeoffs and unknowns.
