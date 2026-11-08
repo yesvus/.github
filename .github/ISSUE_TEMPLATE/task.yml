@@ -1,0 +1,27 @@
+name: Engineering task
+description: Describe a bounded piece of work with a verifiable result
+title: "[Task] "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must be true to consider this complete?
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: Commands, tests or manual checks expected.
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and constraints
+      description: Link related issues and note any human decisions or access prerequisites. An issue alone does not authorize execution.
