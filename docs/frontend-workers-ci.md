@@ -13,7 +13,7 @@ jobs:
   workers-checks:
     # For public template consumers, review and pin a trusted commit SHA
     # rather than permanently following a moving branch.
-    uses: yesvus/.github/.github/workflows/frontend-workers-checks.yml@main
+    uses: yesvus/.github/.github/workflows/frontend-workers-checks.yml@<reviewed-40-character-commit-sha>
     permissions:
       contents: read
     with:
@@ -24,7 +24,7 @@ jobs:
       check-cloudflare: false # change to true ONLY after cf + Vite plugin are pinned
 ```
 
-If using a repo with no `format:check` or browser test script, leave those flags false. This v1 contract assumes a pnpm project at the repository root, with a committed lockfile and `lint` / `build` scripts.
+If using a repo with no `format:check`, `test:browser:install`, or `test` scripts, leave the corresponding flags false. `run-browser-tests: true` needs **both** `test:browser:install` and `test`. This v1 contract assumes a pnpm project at the repository root, with a committed lockfile and `lint` / `build` scripts.
 
 ## Enable Cloudflare preflight
 
@@ -44,6 +44,6 @@ The workflow runs `cf deploy --dry-run` **without any Cloudflare credential**. T
 
 ## Status
 
-The workflow is a safe foundation, **not a completed deployment pipeline**. Follow-up tracked in [#2](https://github.com/yesvus/.github/issues/2): pin third-party actions to reviewed SHAs, test consumer integration, preview lifecycle, secret rotation, guarded production promotion and rollback.
+The workflow is a safe foundation, **not a completed deployment pipeline**. Third-party Actions are already pinned to reviewed commit SHAs, and [dashboard-template PR #3](https://github.com/yesvus/dashboard-template/pull/3) exercises the workflow. Follow-up tracked in [#2](https://github.com/yesvus/.github/issues/2): trusted preview lifecycle, secret rotation, guarded production promotion and rollback.
 
 Cloudflare reference: https://developers.cloudflare.com/cf/ci/
